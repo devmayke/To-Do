@@ -87,6 +87,7 @@ marcarTarefa()
 function apagarTarefa() {
     for (i = 0; i < tarefas.length; i++) {
         if (tarefas[i].classList.contains('feito')) {
+            console.log("Tarefa apagada")
             tarefas[i].remove()
         }
     }
