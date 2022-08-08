@@ -15,7 +15,8 @@ jobs:
       matrix:
         node-version: [12.x, 14.x, 16.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-    steps:      
+    steps: 
+    - run: npm install
     - name: Send mail      
       uses: dawidd6/action-send-mail@v3
       with:
