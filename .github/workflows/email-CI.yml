@@ -15,8 +15,7 @@ jobs:
       matrix:
         node-version: [12.x, 14.x, 16.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-    steps: 
-    - run: npm install
+    steps:   
     - name: Send mail      
       uses: dawidd6/action-send-mail@v3
       with:
@@ -35,7 +34,7 @@ jobs:
         # Required sender full name (address can be skipped):
         from: Luke Skywalker # <devMayke@gmail.com>       
         # Optional plain body:
-        body: esse deveria ser o corpo da mensagem dos repositorio ${{github.repository}} !
+        body: Testes unitários passaram ${{github.repository}} !
     
         
   testes:
@@ -45,7 +44,7 @@ jobs:
         node-version: [12.x, 14.x, 16.x]
     
     steps:     
-      - run: npm run test  
+      - run: npm run test && npm run test  
         
         
         
