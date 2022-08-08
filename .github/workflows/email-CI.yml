@@ -44,7 +44,7 @@ jobs:
         node-version: [12.x, 14.x, 16.x]
     
     steps:     
-      - run: npm run test && npm run test  
+      - run: npm install && npm run test  
         
         
         
