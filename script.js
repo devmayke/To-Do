@@ -94,3 +94,6 @@ function apagarTarefa() {
 }
 
 btnApagar.addEventListener('click', apagarTarefa)
+
+
+////teste CI CD///////////////
