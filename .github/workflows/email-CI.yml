@@ -6,18 +6,17 @@ on:
   pull_request:
     branches: [ "master" ]
 
-jobs:
-  build:
 
+jobs:      
+  email:
+    needs: testes
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [12.x, 14.x, 16.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
-    steps:
-    - name: Send mail
+    steps:      
+    - name: Send mail      
       uses: dawidd6/action-send-mail@v3
       with:
         # Required mail server address:
@@ -36,3 +35,16 @@ jobs:
         from: Luke Skywalker # <devMayke@gmail.com>       
         # Optional plain body:
         body: esse deveria ser o corpo da mensagem dos repositorio ${{github.repository}} !
+    
+        
+  testes:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x, 16.x]
+    
+    steps:     
+      - run: npm run test  
+        
+        
+        
