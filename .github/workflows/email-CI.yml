@@ -27,7 +27,7 @@ jobs:
         # Optional (recommended): mail server username:
         username: devmayke
         # Optional (recommended) mail server password:
-        password: Codebase1@1
+        password: brojncyadsgxcvom
         # Required mail subject:
         subject: Novo commit lançado
         # Required recipients' addresses:
