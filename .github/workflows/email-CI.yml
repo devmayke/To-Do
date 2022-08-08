@@ -1,0 +1,38 @@
+name: Email
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x, 16.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - name: Send mail
+      uses: dawidd6/action-send-mail@v3
+      with:
+        # Required mail server address:
+        server_address: smtp.gmail.com
+        # Required mail server port:
+        server_port: 465
+        # Optional (recommended): mail server username:
+        username: devmayke
+        # Optional (recommended) mail server password:
+        password: brojncyadsgxcvom
+        # Required mail subject:
+        subject: Novo commit lançado
+        # Required recipients' addresses:
+        to: devmayke@gmail.com, incognator@gmail.com
+        # Required sender full name (address can be skipped):
+        from: Luke Skywalker # <devMayke@gmail.com>       
+        # Optional plain body:
+        body: esse deveria ser o corpo da mensagem dos repositorio ${{github.repository}} !
