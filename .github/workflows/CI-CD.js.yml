@@ -25,5 +25,5 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-    - run: ls -l
+    - run: ls -l && git checkout info && git add . && git commit -m "commit automático" && git push
    
