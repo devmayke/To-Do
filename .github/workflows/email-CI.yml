@@ -47,6 +47,6 @@ jobs:
         # Required recipients' addresses:
         to: devmayke@gmail.com, incognator@gmail.com
         # Required sender full name (address can be skipped):
-        from: Luke Skywalker # <devMayke@gmail.com>       
+        from: Mayke Ken # <devMayke@gmail.com>       
         # Optional plain body:
         body: Testes unitários passaram ${{github.repository}} !
