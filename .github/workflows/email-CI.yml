@@ -49,5 +49,4 @@ jobs:
         # Required sender full name (address can be skipped):
         from: Mayke Ken # <devMayke@gmail.com>       
         # Optional plain body:
-        body: 'Testes unitários passaram para ${{github.repository}} !<br>
-               Commit: "${{ github.event.head_commit.message }}"'
+        body: '| Testes unitários passaram para ${{github.repository}} ! | ... | Commit: "${{ github.event.head_commit.message }}" |'
