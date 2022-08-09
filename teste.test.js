@@ -6,6 +6,7 @@ const {soma, multiplica} = require("./script2")
       expect(soma(6,7)).toBe(13)
     })
   })
+  
 
 
   describe("MULTIPLICACAO", ()=>{
