@@ -7,7 +7,22 @@ on:
     branches: [ "master" ]
 
 
-jobs:      
+jobs: 
+
+  testes:
+      runs-on: ubuntu-latest
+      strategy:
+        matrix:
+          node-version: [14.x]   
+          
+      steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm i && npm run test
+      
   email:
     needs: testes
     runs-on: ubuntu-latest
@@ -35,16 +50,3 @@ jobs:
         from: Luke Skywalker # <devMayke@gmail.com>       
         # Optional plain body:
         body: Testes unitários passaram ${{github.repository}} !
-    
-        
-  testes:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [12.x, 14.x, 16.x]
-    
-    steps:     
-      - run: npm@5 ci && npm run test  
-        
-        
-        
