@@ -1,5 +1,3 @@
-console.log("uhulllllllll")
-console.log("novo commit")
 
 
 function soma(a,b){
